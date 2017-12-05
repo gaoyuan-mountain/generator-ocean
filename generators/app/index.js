@@ -10,10 +10,16 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: 'list',
+        name: 'language',
+        message: 'Please choose language:',
+        choices: ['es6', 'typescript']
+      },
+      {
+        type: 'list',
+        name: 'technologyStack',
+        message: 'Please choose technology stack:',
+        choices: ['react-redux-rxjs']
       }
     ];
 
@@ -24,13 +30,16 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    const { technologyStack, language } = this.props;
+
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath(`${technologyStack}/${language}/**`),
+      this.destinationPath('./'),
+      { globOptions: { dot: true } }
     );
   }
 
   install() {
-    this.installDependencies();
+    // This.installDependencies();
   }
 };
