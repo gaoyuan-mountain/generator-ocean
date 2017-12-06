@@ -1,12 +1,12 @@
 {
   "name": "generator-ocean",
-  "version": "0.0.0",
+  "version": "1.0.9",
   "description": "",
-  "homepage": "",
+  "homepage": "https://github.com/gaoyuan-mountain/generator-ocean",
   "author": {
     "name": "高原",
-    "email": "yuan.gao@dianrong.com",
-    "url": ""
+    "email": "dp.gaoyuan@gmail.com",
+    "url": "https://github.com/gaoyuan-mountain"
   },
   "files": ["generators"],
   "main": "generators/index.js",
