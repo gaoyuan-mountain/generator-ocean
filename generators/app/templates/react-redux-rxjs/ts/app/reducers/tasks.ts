@@ -1,5 +1,5 @@
-import { createReducer } from 'utils/helpers';
-import { ActionTypes } from 'constants';
+import { createReducer } from '../utils/helpers';
+import { ActionTypes } from '../constants';
 
 export const tasksState = {
   items: [],

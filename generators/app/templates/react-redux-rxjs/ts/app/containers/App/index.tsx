@@ -1,33 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Router from 'modules/ReduxRouter';
-import RedirectPublic from 'modules/RedirectPublic';
-import RedirectProtected from 'modules/RedirectProtected';
+import Router from '../../modules/ReduxRouter';
+import RedirectPublic from '../../modules/RedirectPublic';
+import RedirectProtected from '../../modules/RedirectProtected';
 
-import Task from 'containers/Task';
-import Login from 'containers/Login';
-import NotFound from 'containers/NotFound';
+import Task from '../../containers/Task';
+import Login from '../../containers/Login';
+import NotFound from '../../containers/NotFound';
 
-import Loader from 'components/Loader';
-import Header from 'components/Header';
+import Loader from '../../components/Loader';
+import Header from '../../components/Header';
 
 import '../../styles/style.less';
 import './style.less';
 
-export class App extends React.Component {
-  static propTypes = {
-    app: PropTypes.object.isRequired,
-    dispatch: PropTypes.func.isRequired,
-    router: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired
-  };
+interface AppProps {
+  app;
+  dispatch;
+  user;
+}
+
+class App extends React.Component<AppProps, {}> {
+  constructor(props: AppProps) {
+    super(props);
+  }
 
   render() {
-    const { app, dispatch, router, user } = this.props;
-    let html = (
-      <Router dispatch={dispatch} router={router}>
+    const { app, dispatch, user } = this.props;
+    const html = (
+      <Router dispatch={dispatch}>
         <div key="app" className="app">
           <main className="app-main">
             <Switch>
@@ -58,9 +60,8 @@ export class App extends React.Component {
 function mapStateToProps(state) {
   return {
     app: state.app,
-    router: state.router,
     user: state.user
   };
 }
 
-export  default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, (dispatch) => ({ dispatch }))(App);
