@@ -1,17 +1,14 @@
-'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const packageInfo = require('./package.json');
 
 module.exports = {
   devtool: 'source-map',
   entry: {
-    browser: ['react-hot-loader/patch', path.join(__dirname, 'app/index.js')],
+    browser: ['react-hot-loader/patch', path.join(__dirname, 'app/index.jsx')],
     common: ['react', 'react-router']
   },
   output: {
@@ -40,7 +37,7 @@ module.exports = {
       title: packageInfo.title,
       version: packageInfo.version,
       template: 'app/index.html',
-      filename: 'index.html',
+      filename: 'index.html'
       // favicon: 'favicon.ico'
     }),
     new ExtractTextPlugin('[name]-[contenthash].min.css'),

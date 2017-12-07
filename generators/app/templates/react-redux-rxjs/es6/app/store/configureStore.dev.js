@@ -18,7 +18,11 @@ const configStore = (initialState = {}) => {
     applyMiddleware(thunk, epicMiddleware, logger)
   )(createStore);
 
-  const store = createStoreWithMiddleware(reducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  const store = createStoreWithMiddleware(
+    reducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 
   if (module.hot) {
     module.hot.accept('reducers', () => {

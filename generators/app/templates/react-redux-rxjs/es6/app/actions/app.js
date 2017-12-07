@@ -7,7 +7,7 @@ export function goTo(pathname: string, options: Object = {}) {
     location: {
       pathname,
       search: options.search,
-      state: options.state,
+      state: options.state
     }
   };
 }
