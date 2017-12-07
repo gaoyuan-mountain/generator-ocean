@@ -20,6 +20,6 @@ export default {
         location: payload.location,
         action: payload.action
       };
-    },
-  }),
+    }
+  })
 };

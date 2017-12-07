@@ -26,7 +26,7 @@ export default {
         isReady: true
       };
     },
-    [ActionTypes.FETCH_TASKS.FAILURE](state, action) {
+    [ActionTypes.FETCH_TASKS.FAILURE](state) {
       return {
         ...state,
         items: [],
@@ -34,6 +34,6 @@ export default {
         isReady: false,
         error: true
       };
-    },
-  }),
+    }
+  })
 };

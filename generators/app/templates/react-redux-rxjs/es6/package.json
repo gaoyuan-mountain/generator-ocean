@@ -87,7 +87,9 @@
     "start": "node server.js",
     "build:dev": "./bin/build dev",
     "build:demo": "./bin/build demo",
-    "build:prod": "./bin/build prod"
+    "build:prod": "./bin/build prod",
+    "lint": "eslint .",
+    "precommit": "npm run lint"
   },
   "browserslist": [
     "ie >= 10",

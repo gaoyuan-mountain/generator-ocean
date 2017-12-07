@@ -1,18 +1,15 @@
-'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const clean = require('clean-webpack-plugin');
+const Clean = require('clean-webpack-plugin');
 const packageInfo = require('./package.json');
 
 module.exports = {
   devtool: 'source-map',
   entry: {
-    browser: path.join(__dirname, 'app/index.js'),
+    browser: path.join(__dirname, 'app/index.jsx'),
     common: ['react', 'react-router']
   },
   output: {
@@ -36,15 +33,15 @@ module.exports = {
     }
   },
   plugins: [
-    new clean(['./build']),
+    new Clean(['./build']),
     new ProgressBarPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new HtmlWebpackPlugin({
       title: packageInfo.title,
       version: packageInfo.version,
       template: 'app/index.html',
-      filename: 'index.html',
-      // favicon: 'favicon.ico'
+      filename: 'index.html'
+      // favicon: 'favicon.ico',
     }),
     new ExtractTextPlugin('[name]-[contenthash].min.css'),
     new webpack.HotModuleReplacementPlugin(),

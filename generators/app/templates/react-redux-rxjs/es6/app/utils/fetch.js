@@ -6,14 +6,14 @@ axios.defaults.xsrfHeaderName = 'x-csrf-token';
 
 // 设置响应拦截器统一处理错误
 axios.interceptors.response.use(
-  (res) => {
-    if (res.data.code === 0) {
-      return res.data;
-    } else {
+  res => {
+    if (res.data.code !== 0) {
       throw new Error(res.data.errors[0]);
+    } else {
+      return res.data;
     }
   },
-  (error) => {
+  error => {
     throw Error(error);
   }
 );
