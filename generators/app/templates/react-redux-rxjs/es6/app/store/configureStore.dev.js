@@ -20,8 +20,7 @@ const configStore = (initialState = {}) => {
 
   const store = createStoreWithMiddleware(
     reducer,
-    initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    initialState
   );
 
   if (module.hot) {

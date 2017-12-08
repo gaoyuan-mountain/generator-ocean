@@ -3,8 +3,7 @@ import { ActionTypes } from '../constants/index';
 
 export const userState = {
   isAuthenticated: false,
-  isRunning: false,
-  rehydrated: false
+  isRunning: false
 };
 
 export default {

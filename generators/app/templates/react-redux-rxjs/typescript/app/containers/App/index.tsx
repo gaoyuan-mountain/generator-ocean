@@ -10,7 +10,6 @@ import Login from '../../containers/Login';
 import NotFound from '../../containers/NotFound';
 
 import Loader from '../../components/Loader';
-import Header from '../../components/Header';
 
 import '../../styles/style.less';
 import './style.less';

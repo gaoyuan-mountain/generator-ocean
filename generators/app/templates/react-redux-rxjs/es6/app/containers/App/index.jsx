@@ -11,12 +11,11 @@ import Login from 'containers/Login';
 import NotFound from 'containers/NotFound';
 
 import Loader from 'components/Loader';
-import Header from 'components/Header';
 
 import '../../styles/style.less';
 import './style.less';
 
-export class App extends React.Component {
+export class App extends React.PureComponent {
   static propTypes = {
     app: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import App from 'containers/App';
 
-export default class Root extends React.Component {
+export default class Root extends React.PureComponent {
   static propTypes = {
     store: PropTypes.object.isRequired
   };

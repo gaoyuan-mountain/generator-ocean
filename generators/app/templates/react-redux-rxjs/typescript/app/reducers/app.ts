@@ -1,8 +1,6 @@
 import { createReducer } from '../utils/helpers';
 
-export const appState = {
-  rehydrated: false
-};
+export const appState = {};
 
 export default {
   app: createReducer(appState, {})
