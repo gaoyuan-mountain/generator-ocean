@@ -2,20 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-const RedirectPublic = ({ component: Component, isAuthenticated, ...rest }) => (
-  <Route
-    {...rest}
-    render={props => (
-      isAuthenticated ?
-      (<Redirect to="/task" />) :
-      (<Component {...props} />)
-    )}
-  />
-);
+class RedirectPublic extends React.PureComponent {
+  static propTypes = {
+    path: PropTypes.string,
+    exact: PropTypes.bool,
+    component: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    location: PropTypes.object
+  };
 
-RedirectPublic.propTypes = {
-  component: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired
-};
+  render() {
+    const { isAuthenticated } = this.props;
+    return (
+      <Route
+        render={(props) => (
+          isAuthenticated ?
+          (<Redirect to="/task" />) :
+          (<this.props.component {...props} />)
+        )}
+      />
+    );
+  }
+}
 
 export default RedirectPublic;

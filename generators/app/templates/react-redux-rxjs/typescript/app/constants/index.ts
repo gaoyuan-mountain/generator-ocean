@@ -9,6 +9,5 @@ function actionGenerator(key) {
 export const ActionTypes = {
   USER_LOGIN: actionGenerator('USER_LOGIN'),
   FETCH_TASKS: actionGenerator('FETCH_TASKS'),
-  XHR: actionGenerator('XHR'),
   LOCATION_CHANGE: '@@router/LOCATION_CHANGE'
 };
