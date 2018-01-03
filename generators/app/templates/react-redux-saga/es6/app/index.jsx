@@ -1,6 +1,5 @@
 import 'core-js/shim';
 import 'classlist-polyfill';
-import 'vendor/rxjs';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from 'containers/Root';
