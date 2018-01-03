@@ -1,6 +1,5 @@
 import 'core-js/shim';
 import 'classlist-polyfill';
-import './vendor/rxjs';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
