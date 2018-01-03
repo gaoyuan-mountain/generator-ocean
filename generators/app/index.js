@@ -19,7 +19,7 @@ module.exports = class extends Generator {
         type: 'list',
         name: 'technologyStack',
         message: 'Please choose technology stack:',
-        choices: ['react-redux-rxjs']
+        choices: ['react-redux-rxjs', 'react-redux-saga']
       }
     ];
 
