@@ -2,7 +2,7 @@
   "name": "react-redux-rxjs",
   "title": "react-redux-rxjs",
   "description": "react-redux-rxjs",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "author": "Gaoyuan <dp.gaoyuan@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -75,6 +75,7 @@
   },
   "scripts": {
     "start": "tsc && NODE_ENV=development node server",
+    "start:win32": "tsc&&set NODE_ENV=development&&node server",
     "build:dev": "./bin/build dev",
     "build:demo": "./bin/build demo",
     "build:prod": "./bin/build prod",
