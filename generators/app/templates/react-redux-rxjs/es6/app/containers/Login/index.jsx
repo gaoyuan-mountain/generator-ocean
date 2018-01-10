@@ -35,8 +35,6 @@ class Login extends React.PureComponent {
   }
 };
 
-Login.propTypes = {
-  location: PropTypes.object.isRequired
-};
+Login.propTypes = {};
 
 export default connect()(Login);
