@@ -7,7 +7,7 @@ const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
   rootComponent: AppEntry,
-  domElementGetter: () => document.getElementById('activity'),
+  domElementGetter: () => document.getElementById('<%= projectName %>'),
 });
 
 export const bootstrap = [
