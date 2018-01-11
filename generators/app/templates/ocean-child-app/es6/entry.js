@@ -31,7 +31,7 @@ class Root extends React.PureComponent {
         <HashRouter>
           <PermissionGuard profile={this.props.profile}>
             <Switch>
-              <Route path="/activity/home" component={createComponent(Home)} />
+              <Route path="/<%= projectName %>/home" component={createComponent(Home)} />
             </Switch>
           </PermissionGuard>
         </HashRouter>
