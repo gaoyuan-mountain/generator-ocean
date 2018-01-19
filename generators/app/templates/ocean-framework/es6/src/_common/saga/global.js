@@ -1,6 +1,6 @@
 import { takeEvery, put, call, fork, all } from 'redux-saga/effects';
-import { PROFILE, ERROR } from '../_constant/actionType';
-import authService from '../_service/auth';
+import { PROFILE, ERROR } from 'common-constant/actionType';
+import authService from 'common-service/auth';
 
 export function* profile(action) {
   try {

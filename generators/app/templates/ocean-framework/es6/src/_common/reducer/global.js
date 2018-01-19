@@ -1,5 +1,5 @@
-import { createReducer } from '../_utils/helper';
-import { PROFILE } from '../_constant/actionType';
+import { createReducer } from 'common-utils/helper';
+import { PROFILE } from 'common-constant/actionType';
 
 export const initialState = {
   profile: {},

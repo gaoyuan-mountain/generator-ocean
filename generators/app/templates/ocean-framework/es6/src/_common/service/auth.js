@@ -1,5 +1,5 @@
-import Fetch from '../_utils/fetch';
-import { PROFILE } from '../_constant/api';
+import Fetch from 'common-utils/fetch';
+import { PROFILE } from 'common-constant/api';
 
 const authService = {
   profile() {
